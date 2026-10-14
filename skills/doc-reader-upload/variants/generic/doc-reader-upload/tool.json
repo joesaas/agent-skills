@@ -1,0 +1,46 @@
+{
+  "name": "doc_reader_upload",
+  "description": "Upload an HTML document to DocReader/Agent 101. Never call with yes=true until the user confirms the exact title, category and document.",
+  "command": "python3 bin/upload_doc.py",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string",
+        "enum": [
+          "agent",
+          "defi",
+          "blockchain",
+          "protocol",
+          "security",
+          "network",
+          "engineering",
+          "other"
+        ]
+      },
+      "html_file": {
+        "type": "string"
+      },
+      "external_id": {
+        "type": "string"
+      },
+      "yes": {
+        "type": "boolean",
+        "description": "Must be false for dry run. Set true only after explicit user confirmation."
+      }
+    },
+    "required": [
+      "title",
+      "category",
+      "html_file",
+      "yes"
+    ]
+  },
+  "environment": [
+    "DOC_READER_API_KEY",
+    "DOC_READER_BASE"
+  ]
+}
