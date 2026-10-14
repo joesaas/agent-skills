@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "skills": [
+    {
+      "name": "doc-reader-upload",
+      "version": "1.0.0",
+      "description": "Publish confirmed HTML research documents to the DocReader / Agent 101 document center.",
+      "service": "https://agent101.uk",
+      "variants": {
+        "muse": {
+          "package": "doc-reader-upload-muse",
+          "path": "skills/doc-reader-upload/variants/muse/doc-reader-upload-muse",
+          "auth": "custom.agent101 connector surrogate (Sentinel), DOC_READER_API_KEY fallback"
+        },
+        "claude-code": {
+          "package": "doc-reader-upload",
+          "path": "skills/doc-reader-upload/variants/claude-code/doc-reader-upload",
+          "auth": "DOC_READER_API_KEY environment variable"
+        },
+        "codex": {
+          "package": "doc-reader-upload",
+          "path": "skills/doc-reader-upload/variants/codex/doc-reader-upload",
+          "auth": "DOC_READER_API_KEY environment variable"
+        },
+        "openclaw": {
+          "package": "doc-reader-upload",
+          "path": "skills/doc-reader-upload/variants/openclaw/doc-reader-upload",
+          "auth": "OpenClaw skills.entries env/apiKey injection"
+        },
+        "generic": {
+          "package": "doc-reader-upload",
+          "path": "skills/doc-reader-upload/variants/generic/doc-reader-upload",
+          "auth": "host secret manager -> DOC_READER_API_KEY"
+        }
+      }
+    }
+  ]
+}
