@@ -1,0 +1,6 @@
+interface:
+  display_name: "DocReader Upload"
+  short_description: "Publish confirmed HTML research documents to Agent 101"
+  default_prompt: "Use $doc-reader-upload to prepare this research as HTML, show me the title and category, and upload it to DocReader only after I confirm."
+policy:
+  allow_implicit_invocation: true
